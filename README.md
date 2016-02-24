@@ -1,11 +1,11 @@
-# poor-mans-proxy
+# poor-mans-proxy [![Build Status](https://travis-ci.org/bealearts/poor-mans-proxy.svg)](https://travis-ci.org/bealearts/poor-mans-proxy) [![npm version](https://badge.fury.io/js/poor-mans-proxy.svg)](http://badge.fury.io/js/poor-mans-proxy)
 
 ES6 [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) pollyfill, with many limitations
 
 > This is a best effort polyfill, as most of Proxy's functionality can not be implemented in userland.
 
 
-## Install [![Build Status](https://travis-ci.org/bealearts/poor-mans-proxy.svg)](https://travis-ci.org/bealearts/poor-mans-proxy) [![npm version](https://badge.fury.io/js/poor-mans-proxy.svg)](http://badge.fury.io/js/poor-mans-proxy)
+## Install
 ```shell
 npm install poor-mans-proxy --save
 ```
