@@ -1,6 +1,6 @@
 {
   "name": "poor-mans-proxy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ES6 Proxy pollyfill, with many limitations",
   "main": "lib/poor-mans-proxy.js",
   "scripts": {
