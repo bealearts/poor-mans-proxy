@@ -43,6 +43,23 @@ describe('Object Proxy', function() {
 
 		});
 
+
+		it('should be transparent with a handler that delegates to the target', function() {
+
+			var target = {
+				value: 5
+			};
+
+			var proxy = new Proxy(target, {
+				get: function(target, prop, receiver) {
+					return target[prop];
+				}
+			});
+
+			expect(proxy.value).to.equal(5);
+
+		});
+
 	});
 
 
@@ -62,14 +79,14 @@ describe('Object Proxy', function() {
 
 		});
 
-		it('should not be transparent without a handler', function() {
+		it('should not be transparent with a handler', function() {
 
 			var target = {
 				value: 5
 			};
 
 			var proxy = new Proxy(target, {
-				set: function(target, prop, receiver) {
+				set: function(target, prop, value, receiver) {
 					// Do Nothing
 				}
 			});
@@ -80,6 +97,87 @@ describe('Object Proxy', function() {
 
 		});
 
+		it('should be transparent with a handler that delegates to the target', function() {
+
+			var target = {
+				value: 5
+			};
+
+			var proxy = new Proxy(target, {
+				set: function(target, prop, value, receiver) {
+					target[prop] = value;
+				}
+			});
+
+			proxy.value = 7;
+
+			expect(target.value).to.equal(7);
+
+		});
+
+	});
+
+
+	describe('for calling functions', function() {
+
+		it('should be transparent without a handler', function() {
+
+			var target = {
+				value: 5,
+				method: function(arg) {
+					this.value = arg;
+				}
+			};
+
+			var proxy = new Proxy(target);
+
+			proxy.method(8);
+
+			expect(target.value).to.equal(8);
+
+		});
+
+		it('should not be transparent with a handler', function() {
+
+			var target = {
+				value: 5,
+				method: function(arg) {
+					this.value = arg;
+				}
+			};
+
+			var proxy = new Proxy(target, {
+				get: function(target, prop, receiver) {
+					return function() {};	// Do Nothing
+				}
+			});
+
+			proxy.method(8);
+
+			expect(target.value).to.equal(5);
+
+		});
+
+		it('should be transparent with a handler that delegates to the target', function() {
+
+			var target = {
+				value: 5,
+				method: function(arg) {
+					this.value = arg;
+				}
+			};
+
+			var proxy = new Proxy(target, {
+				get: function(target, prop, receiver) {
+					return target[prop];
+				}
+			});
+
+			proxy.method(8);
+
+			expect(target.value).to.equal(8);
+
+		});
 	});
 
 });
