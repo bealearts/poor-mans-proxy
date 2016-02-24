@@ -21,6 +21,11 @@
       "url": "https://github.com/bealearts/poor-mans-proxy/blob/master/LICENSE"
     }
   ],
+  "keywords": [
+    "proxy",
+    "es6",
+    "polyfill"
+  ],
   "author": {
     "name": "David Beale",
     "url": "http://bealearts.co.uk/"

@@ -60,6 +60,23 @@ describe('Object Proxy', function() {
 
 		});
 
+
+		it('should support prototype chains', function() {
+
+			var target = Object.create({
+				value: 5
+			});
+
+			var proxy = new Proxy(target, {
+				get: function(target, prop, receiver) {
+					return target[prop];
+				}
+			});
+
+			expect(proxy.value).to.equal(5);
+
+		});
+
 	});
 
 
