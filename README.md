@@ -5,7 +5,7 @@ ES6 [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Gl
 > This is a best effort polyfill, as most of Proxy's functionality can not be implemented in userland.
 
 
-## Install
+## Install [![Build Status](https://travis-ci.org/bealearts/poor-mans-proxy.svg)](https://travis-ci.org/bealearts/poor-mans-proxy) [![npm version](https://badge.fury.io/js/poor-mans-proxy.svg)](http://badge.fury.io/js/poor-mans-proxy)
 ```shell
 npm install poor-mans-proxy --save
 ```
@@ -35,7 +35,7 @@ console.log(proxy.obj);
 
 ## API
 
-#### `new Proxy(target, [handler])`
+#### `new Proxy(target [, handler])`
 
 Creates a Proxy of the target object, with handlers defined by the handler object.
 

@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.12'
+deploy:
+  provider: npm
+  api_key:
+    secure: hWSvJXjbiCXZyNQM9868dR8KXfCKGsAGJi81+J2BbpIEDxQamFK4DdQ4YS+qMAYEF5OgVY+eDQQ8md2JzyXv5l20uaUPHyoT7v3VcN8Ig6z9+T773pLwJ6JcGLUo+mP9hiaxv8TQiQxkXMOwwxvP6nJsuM69amhIbbyN+EnI8mZPPkBMbzUF/BcVwlm1gNeGcW0vfoJp2N0rZMV+b6TiJ0uwndeFMQWJtcayHyG44tZtd8Ntp9VARK0TVoPAvdS9Qncf2+QcHCip8peT3AA2loKWV/tUnnzUM8Obkvoturf1Xjci+fgHeHVxPR/SYsW7z+eTrLtV/yY5UX5Te1PSwitCE8zeEgPLUkNZArBQ/I91VLgNGxPC1zUaV9Tdt0fJoT7N7Yc8vnobaEJDb/d1LDNBzh76i0NuDz7H8AmpwAEOXEMC2Sreq493ZJh3BMrF3OnfqrSQTRCMixMsjHpsfJNRzvEcHqSfFXdxptSlajB4gl9/tNWprhYNZqgKGk34bVjUY7XZgZlUwwhcgvbm9dHla4cEyaFtGtVQ/7bxHk71u2J2KbHlncVxhsb3xy3q3ZSZLRB3p/n2H7osfoVQs+5AkLQXbQo56eWgHWm/CaCJaGxNSyIeM35Jn7gzXuPA7mKTEBgtoz9yNYPjzg/k2c5a087U7Ib3C8g5CaQvMNk=
+  on:
+    all_branches: true
+    tags: true
+    email: david.beale@bealearts.co.uk
+    repo: bealearts/poor-mans-proxy
