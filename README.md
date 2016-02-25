@@ -47,7 +47,7 @@ Creates a Proxy of the target object, with handlers defined by the handler objec
 
 > **_.set = function(target, property, value, receiver)_** The handler.set() method is a trap for setting a property value. See [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/get)
 
-> **_.apply = function(target, thisArg, argumentsList)_** The handler.apply() method is a trap for a function call. See [Apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/apply)
+> **_.apply = function(target, thisArg, argumentsList)_** The handler.apply() method is a trap for a function call (if `target` is a function). See [Apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/apply)
 
 The `target` object's properties must be defined before calling `new Proxy()`. Dynamic properties are not supported.
 

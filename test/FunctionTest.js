@@ -53,4 +53,25 @@ describe('Function Proxy', function() {
 
 	});
 
+
+	it('should support properties', function() {
+
+		var target = function(arg) {
+			return arg;
+		};
+
+		target.value = 4;
+
+		var proxy = new Proxy(target, {
+			apply: function(target, thisArg, argumentsList) {
+				return target.apply(thisArg, argumentsList);
+			}
+		});
+
+		expect(proxy(8)).to.equal(8);
+
+		expect(proxy.value).to.equal(4);
+
+	});
+
 });

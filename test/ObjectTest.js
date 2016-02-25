@@ -197,4 +197,55 @@ describe('Object Proxy', function() {
 		});
 	});
 
+
+	describe('for prototypes', function() {
+
+		it('can be an object prototype', function() {
+
+			var proto = new Proxy({
+					value: 5
+				},
+				{
+					get: function(target, prop, receiver) {
+						return 3;
+					}
+				}
+			);
+
+			var obj = Object.create(proto);
+			
+			expect(obj.value).to.equal(3);
+
+		});
+
+	});
+
+
+	describe('invariants', function() {
+
+		it ('should be maintained', function() {
+
+			var target = Object.defineProperties({}, {
+				bar: {
+					value: 456,
+					enumerable: true,
+					writable: false,
+					configurable: false
+				}
+			});
+			
+			var proxy = new Proxy(target, {
+				get: function(target, prop) {
+					return 'abc';
+				}
+			});
+
+			expect(function() {
+				proxy.bar;
+			}).to.throw('Invariant check failed');
+
+		});
+
+	});
+
 });
