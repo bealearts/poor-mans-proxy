@@ -198,28 +198,37 @@ describe('Object Proxy', function() {
 	});
 
 
-	describe('for prototypes', function() {
+	it('should have the prototype of the target', function() {
 
-		it('can be an object prototype', function() {
+		var proto = {};
 
-			var proto = new Proxy({
-					value: 5
-				},
-				{
-					get: function(target, prop, receiver) {
-						return 3;
-					}
-				}
-			);
+		var target = Object.create(proto);
 
-			var obj = Object.create(proto);
-			
-			expect(obj.value).to.equal(3);
+		expect(Object.getPrototypeOf(target)).to.equal(proto);
 
-		});
+		var proxy = new Proxy(target, {});
+
+		expect(Object.getPrototypeOf(proxy)).to.equal(proto);
 
 	});
 
+	it('can be an object prototype', function() {
+
+		var proto = new Proxy({
+				value: 5
+			},
+			{
+				get: function(target, prop, receiver) {
+					return 3;
+				}
+			}
+		);
+
+		var obj = Object.create(proto);
+		
+		expect(obj.value).to.equal(3);
+
+	});
 
 	describe('invariants', function() {
 
