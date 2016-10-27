@@ -15,12 +15,7 @@
   "bugs": {
     "url": "https://github.com/bealearts/poor-mans-proxy/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/bealearts/poor-mans-proxy/blob/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "keywords": [
     "proxy",
     "es6",
@@ -37,5 +32,8 @@
     "chai": "^3.5.0",
     "jshint": "^2.9.1",
     "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "poor-mans-proxy-decorate-property": "^0.1.0"
   }
 }

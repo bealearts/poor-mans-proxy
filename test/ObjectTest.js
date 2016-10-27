@@ -7,7 +7,7 @@ var expect = require('chai').expect;
 
 
 describe('Object Proxy', function() {
-	
+
 	describe('for getting properties', function() {
 
 		it('should be transparent without a handler', function() {
@@ -225,7 +225,7 @@ describe('Object Proxy', function() {
 		);
 
 		var obj = Object.create(proto);
-		
+
 		expect(obj.value).to.equal(3);
 
 	});
@@ -242,7 +242,7 @@ describe('Object Proxy', function() {
 					configurable: false
 				}
 			});
-			
+
 			var proxy = new Proxy(target, {
 				get: function(target, prop) {
 					return 'abc';
@@ -250,8 +250,8 @@ describe('Object Proxy', function() {
 			});
 
 			expect(function() {
-				proxy.bar;
-			}).to.throw('Invariant check failed');
+				var x = proxy.bar;
+			}).to.throw('\'get\' on proxy: property \'bar\' is a read-only and non-configurable data property on the proxy target but the proxy did not return its actual value (expected \'456\' but got \'abc\'');
 
 		});
 
