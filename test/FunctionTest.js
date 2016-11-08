@@ -1,13 +1,13 @@
 'use strict';
 
-require('../');
+var Proxy = require('../');
 
 /*jshint -W079 */
 var expect = require('chai').expect;
 
 
 describe('Function Proxy', function() {
-	
+
 
 	it('should be transparent without a handler', function() {
 

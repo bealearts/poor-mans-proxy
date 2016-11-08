@@ -1,6 +1,6 @@
 'use strict';
 
-require('../');
+var Proxy = require('../');
 
 /*jshint -W079 */
 var expect = require('chai').expect;
