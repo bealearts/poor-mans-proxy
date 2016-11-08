@@ -34,6 +34,6 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
-    "poor-mans-proxy-decorate-property": "^0.1.0"
+    "poor-mans-proxy-decorate-property": "^1.0.0"
   }
 }
